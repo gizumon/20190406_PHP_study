@@ -1,7 +1,7 @@
 <?php
 
 use App\Book;
-use Illminate\Http\Request;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,6 @@ use Illminate\Http\Request;
 */
 
 Route::get('/', function () {
-    echo "Entering routes...";
     $books = Book::all();
     return view('books',[
         "books" => $books
@@ -30,7 +29,7 @@ Route::post('/book', function (Request $request) {
     if($validator->fails()){
         return redirect('/')
             ->withInput()
-            ->withErorrs($validator);
+            ->withErrors($validator);
     }
     $book = new Book; //ORM
     $book->title = $request->name;

@@ -7,7 +7,6 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
-echo "Define...";
 define('LARAVEL_START', microtime(true));
 
 /*
@@ -22,7 +21,6 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-echo "Require...";
 require __DIR__.'/../vendor/autoload.php';
 
 /*
@@ -37,7 +35,6 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-echo "$app = ...";
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
